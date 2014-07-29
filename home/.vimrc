@@ -6,7 +6,7 @@ if has('vim_starting')
 endif
 
 NeoBundleFetch 'Shougo/neobundle.vim' 
-NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Shougo/echodoc'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
