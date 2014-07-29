@@ -217,7 +217,8 @@ endfunction
 function! MyFugitive()
   try
     if &ft !~? 'help\|vimfiler\|gundo' && exists('*fugitive#head')
-      return "\u2b60". fugitive#head()
+      let fugitive_head = fugitive#head()
+      return strlen(fugitive_head) ? "\u2b60" . fugitive_head : ''
     endif
   catch
   endtry
