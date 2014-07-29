@@ -26,6 +26,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'sjl/gundo.vim'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'alpaca-tc/alpaca_tags'
 NeoBundle 'tomtom/tcomment_vim'
@@ -292,9 +294,9 @@ function! s:vimfiler_my_settings()
   nmap <buffer> Q <Plug>(vimfiler_hide)
 endfunction
 
-"------------------------------------
+"-------------------------------------------------------------------------------
 " neocomplete
-"------------------------------------
+"-------------------------------------------------------------------------------
 let g:neocomplete#enable_at_startup = 1
 let g:clang_user_options='|| exit 0'
 if !exists('g:neocomplete#force_omni_input_patterns')
@@ -307,9 +309,9 @@ inoremap <expr><C-h> neocomplete#smart_close_popup() . "\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup() . "\<C-h>"
 inoremap <expr><CR> neocomplete#smart_close_popup() . "\<CR>"
 
-"------------------------------------
+"-------------------------------------------------------------------------------
 " neosnippet
-"------------------------------------
+"-------------------------------------------------------------------------------
 imap <silent> <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <silent> <C-k> <Plug>(neosnippet_expand_or_jump)
 
@@ -375,14 +377,14 @@ nnoremap [Prefix]rc :Rcontroller<space>
 nnoremap [Prefix]rm :Rmodel<space>
 nnoremap [Prefix]rv :Rview<space>
 
-"------------------------------------
+"-------------------------------------------------------------------------------
 " endwise.vim
-"------------------------------------
+"-------------------------------------------------------------------------------
 let g:endwise_no_mappings = 1
 
-"------------------------------------
+"-------------------------------------------------------------------------------
 " alpaca_update_tags
-"------------------------------------
+"-------------------------------------------------------------------------------
 augroup AlpacaTags
   autocmd!
     if exists(':Tags')
@@ -391,3 +393,14 @@ augroup AlpacaTags
     autocmd BufEnter * TagsSet
   endif
 augroup END
+
+"-------------------------------------------------------------------------------
+" gitgutter
+"-------------------------------------------------------------------------------
+let g:gitgutter_enabled = 1
+
+"-------------------------------------------------------------------------------
+" gundo
+"-------------------------------------------------------------------------------
+set undofile
+let g:gundo_auto_preview = 0
