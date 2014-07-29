@@ -279,11 +279,8 @@ let g:vimfiler_as_default_explorer = 1
 "Disable safe mode on startup
 let g:vimfiler_safe_mode_by_default = 0
 
-"Open directory of current buffer
-nnoremap <silent> <Leader>fe :<C-u>VimFilerBufferDir -quit<CR>
-
 "Open directory of current buffer, such as IDE like view
-nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit -auto-cd<CR>
+nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -toggle -winwidth=25 -no-quit -auto-cd<CR>
 
 "Change default vimfiler key mapping
 augroup vimrc
