@@ -107,6 +107,11 @@ nnoremap [Prefix], :<c-u>source $MYVIMRC<cr>]]"
 
 set splitbelow
 
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+
 "-------------------------------------------------------------------------------
 " Tab
 "-------------------------------------------------------------------------------
