@@ -5,7 +5,7 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-NeoBundleFetch 'Shougo/neobundle.vim' 
+NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'Shougo/echodoc'
 NeoBundle 'Shougo/unite.vim'
@@ -19,7 +19,7 @@ NeoBundle 'Shougo/vimproc.vim', {
   \     'unix' : 'make -f make_unix.mak',
   \    },
   \ }
-NeoBundle 'Shougo/neocomplete' 
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
@@ -40,6 +40,8 @@ NeoBundle 'ujihisa/unite-rake'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 "If there are uninstalled bundles found on startup,
 "this will conveniently prompt you to install them.
@@ -401,3 +403,13 @@ let g:gitgutter_enabled = 1
 "-------------------------------------------------------------------------------
 set undofile
 let g:gundo_auto_preview = 0
+
+"-------------------------------------------------------------------------------
+" indent_guides
+"-------------------------------------------------------------------------------
+let g:indent_guides_enable_on_vim_startup = 1
+
+"-------------------------------------------------------------------------------
+" trailing_whitespace
+"-------------------------------------------------------------------------------
+autocmd BufWritePre * :FixWhitespace
