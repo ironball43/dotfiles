@@ -310,7 +310,9 @@ let g:neocomplete#enable_camel_case = 1
 " Use underbar_completion.
 let g:neocomplete#enable_underbar_completion = 1
 " Use auto select
- let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 0
+" Set disable auto complete.
+let g:neocomplete#disable_auto_complete = 1
 " Set auto completion start length.
 let g:neocomplete#auto_completion_start_length = 2
 " Set minimum syntax keyword length.
@@ -333,6 +335,8 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " Plugin key-mappings.
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
+imap <expr> . pumvisible() ? "\<C-E>.\<C-X>\<C-O>\<C-P>" : ".\<C-X>\<C-O>\<C-P>"
+
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
